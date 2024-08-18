@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --background-color: #F3F5FC;
+    --primary-color: #0A3871;
+    --secondary-color: #FFFFFF;
+    --third-color: #D8DFE8;
+    --fourth-color: #495057;
+    --fifth-color: #868E96;
+    --sixth-color: #212529;
+    --primary-font: 'Inter', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--primary-font);
+    background-color: var(--background-color);
+    line-height: 150%;
+    font-weight: 400;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    padding: 0 2rem 2rem;
+}
+
+.container-input, .container-output {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-input {
+    flex: 2;
+    padding-right: 2rem;
+}
+
+.container-output {
+    flex: 1;
+    position: relative;
+}
+
+.input-text, .output-text {
+    flex: 1;
+    border: none;
+    padding: 1rem;
+    resize: none;
+    background-color: transparent;
+}
+
+.input-text {
+    color: var(--primary-color);
+    margin-top: 9rem;
+    text-transform: lowercase;
+}
+
+.input-text::placeholder {
+    color: var(--primary-color);
+}
+
+.input-text:focus, .output-text:focus {
+    outline: none;
+}
+
+.output-text {
+    background-color: var(--secondary-color);
+    background-image: url("../img/Muñeco.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 2.4rem;
+    color: var(--primary-color);
+    margin-left: 2rem;
+}
+
+.warning-text {
+    color: var(--fourth-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.btn-encrypt, .btn-decrypt, .btn-copy {
+    border-radius: 2.4rem;
+    cursor: pointer;
+    height: 5rem;
+    width: 22rem;
+    font-size: 1.6rem;
+}
+
+.btn-encrypt {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-decrypt {
+    background-color: var(--third-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-copy {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container-input, .container-output {
+        width: 100%;
+    }
+
+    .container-output {
+        margin-top: 2rem;
+    }
+
+    .output-text {
+        margin-left: 0;
+        min-height: 20rem;
+    }
+
+    .btn-copy {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn-encrypt, .btn-decrypt {
+        width: 100%;
+    }
+}
